@@ -1,6 +1,22 @@
+<script>
+  let files = null;
+
+  function uploadImage() {
+	  console.log("Upload image");
+	  const fileInput = document.getElementById('file');
+	  fileInput.click()
+
+  }
+
+</script>
+
 <nav>
 	<a href="/">home</a>
-	<a href="/about">upload</a>
+	<a on:click|preventDefault={uploadImage} href="/">upload</a>
+	<input id="file" hide="true" accept="image/png, image/jpeg" bind:files  type="file" />
+
+	
+
 </nav>
 
 <main>
@@ -10,6 +26,10 @@
 </main>
 
 <style>
+	#file {
+      display: none;
+    }
+
 	main {
 		text-align: center;
 		padding: 1em;
@@ -29,4 +49,7 @@
 			max-width: none;
 		}
 	}
+
+
+
 </style>
